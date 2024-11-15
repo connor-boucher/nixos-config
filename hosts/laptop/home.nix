@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/user/browsers
     ../../modules/user/dev
     ../../modules/user/editors
     ../../modules/user/music
@@ -15,9 +16,14 @@
 
   programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  home.sessionVariables = {
+    BROWSER = "brave";
+    EDITOR = "nvim";
+    TERMINAL = "foot";
+  };
 
   # User software
+  browsers.enable = true;
   dev.enable = true;
   editors.enable = true;
   music.enable = true;

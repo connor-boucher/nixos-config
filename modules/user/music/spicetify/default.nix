@@ -6,6 +6,8 @@
   options.spicetify.enable = lib.mkEnableOption "enables spicetify";
 
   config = {
+    nixpkgs.config.allowUnfree = lib.mkIf config.spicetify.enable true;
+
     programs.spicetify = lib.mkIf config.spicetify.enable {
       enable = true;
 

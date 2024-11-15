@@ -10,7 +10,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   utils.enable = true;
-  stylx.enable = true;
+  gruvbox.enable = true;
   security.polkit.enable = true;
 
   # Bootloader options
@@ -64,7 +64,7 @@
     users.connor = import ./home.nix;
   };
 
-  fonts.packages = [ pkgs.nerdfonts ];
+  fonts.packages = [ pkgs.nerdfonts pkgs.jetbrains-mono ];
 
   system.stateVersion = "24.05";
 }

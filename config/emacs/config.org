@@ -167,12 +167,4 @@
   (use-package doom-modeline
     :init
     (doom-modeline-mode))
-
-  ;; doom-themes - Editor themes and colorschemes
-  (use-package doom-themes
-    :config
-    (setq doom-themes-enable-bold t
-	  doom-themes-enable-italic t)
-    :init
-    (load-theme 'doom-nord t))
 #+END_SRC

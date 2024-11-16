@@ -8,11 +8,17 @@
       enable = true;
 
       # Enable gruvbox colourscheme
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-      image = ./wallpaper.png;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+      image = ./wallpaper.jpg;
 
       # Set transparency for terminals
       opacity.terminal = 0.95;
+
+      # Set custom cursor
+      cursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+      };
 
       # Set custom fonts
       fonts = {

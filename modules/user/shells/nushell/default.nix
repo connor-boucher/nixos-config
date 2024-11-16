@@ -3,8 +3,8 @@
 {
   options.nushell.enable = lib.mkEnableOption "enables nushell";
 
-  config = {
-    programs.nushell = lib.mkIf config.nushell.enable {
+  config = lib.mkIf config.nushell.enable {
+    programs.nushell = {
       enable = true;
 
       extraConfig = ''

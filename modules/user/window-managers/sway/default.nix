@@ -3,8 +3,8 @@
 {
   options.sway.enable = lib.mkEnableOption "enables sway";
 
-  config = {
-    wayland.windowManager.sway = lib.mkIf config.sway.enable {
+  config = lib.mkIf config.sway.enable {
+    wayland.windowManager.sway = {
       enable = true;
 
       config = rec {

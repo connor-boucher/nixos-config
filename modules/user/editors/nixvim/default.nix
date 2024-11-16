@@ -5,8 +5,8 @@
 
   options.nixvim.enable = lib.mkEnableOption "enables nixvim";
 
-  config = {
-    programs.nixvim = lib.mkIf config.nixvim.enable {
+  config = lib.mkIf config.nixvim.enable {
+    programs.nixvim = {
       enable = true;
 
       # Enable aliases

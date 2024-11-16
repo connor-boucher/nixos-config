@@ -3,8 +3,8 @@
 {
   options.foot.enable = lib.mkEnableOption "enables foot";
 
-  config = {
-    programs.foot = lib.mkIf config.foot.enable {
+  config = lib.mkIf config.foot.enable {
+    programs.foot = {
       enable = true;
 
       settings = {

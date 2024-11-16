@@ -16,13 +16,6 @@
 
   programs.home-manager.enable = true;
 
-  # Custom environment variables
-  home.sessionVariables = {
-    BROWSER = "brave";
-    EDITOR = "nvim";
-    TERMINAL = "foot";
-  };
-
   # User software modules
   browsers.enable = true;
   dev.enable = true;

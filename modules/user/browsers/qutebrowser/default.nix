@@ -3,8 +3,8 @@
 {
   options.qutebrowser.enable = lib.mkEnableOption "enables qutebrowser";
 
-  config = {
-    programs.qutebrowser = lib.mkIf config.qutebrowser.enable {
+  config = lib.mkIf config.qutebrowser.enable {
+    programs.qutebrowser = {
       enable = true;
     };
   };

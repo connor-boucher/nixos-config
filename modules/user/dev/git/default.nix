@@ -3,8 +3,8 @@
 {
   options.git.enable = lib.mkEnableOption "enables git";
 
-  config = {
-    programs.git = lib.mkIf config.git.enable {
+  config = lib.mkIf config.git.enable {
+    programs.git = {
       enable = true;
 
       userName = "connor-boucher";

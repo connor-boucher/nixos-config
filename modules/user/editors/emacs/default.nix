@@ -3,13 +3,13 @@
 {
   options.emacs.enable = lib.mkEnableOption "enables emacs";
 
-  config = {
-    programs.emacs = lib.mkIf config.emacs.enable {
+  config = lib.mkIf config.emacs.enable {
+    programs.emacs = {
       enable = true;
     };
 
     # Copy dotfiles to ~/.config
-    home.file.".config/emacs" = lib.mkIf config.emacs.enable {
+    home.file.".config/emacs" = {
       source = ../../../../config/emacs;
       recursive = true;
     };

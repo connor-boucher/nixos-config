@@ -5,10 +5,10 @@
 
   options.spicetify.enable = lib.mkEnableOption "enables spicetify";
 
-  config = {
-    nixpkgs.config.allowUnfree = lib.mkIf config.spicetify.enable true;
+  config = lib.mkIf config.spicetify.enable {
+    nixpkgs.config.allowUnfree = true;
 
-    programs.spicetify = lib.mkIf config.spicetify.enable {
+    programs.spicetify = {
       enable = true;
 
       # Custom spicetify plugins

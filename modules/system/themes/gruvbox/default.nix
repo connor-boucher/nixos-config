@@ -10,6 +10,7 @@
       # Enable gruvbox colourscheme
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
       image = ./wallpaper.jpg;
+      polarity = "dark";
 
       # Set transparency for applications
       opacity.desktop = 0.95;

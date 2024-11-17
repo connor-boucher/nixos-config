@@ -3,6 +3,7 @@
 {
   imports = [
     ./git
+    ./nixd
     ./nixpkgs-fmt
   ];
 
@@ -10,6 +11,7 @@
 
   config = lib.mkIf config.dev.enable {
     git.enable = lib.mkDefault true;
+    nixd.enable = lib.mkDefault true;
     nixpkgs-fmt.enable = lib.mkDefault true;
   };
 }

@@ -3,13 +3,11 @@
 {
   imports = [
     ../../modules/system/themes
-    ../../modules/system/utils
   ];
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  utils.enable = true;
   gruvbox.enable = true;
   security.polkit.enable = true;
 

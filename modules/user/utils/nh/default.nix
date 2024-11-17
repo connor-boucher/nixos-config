@@ -3,8 +3,8 @@
 {
   options.nh.enable = lib.mkEnableOption "enables nh";
 
-  config = {
-    programs.nh = lib.mkIf config.nh.enable {
+  config = lib.mkIf config.nh.enable {
+    programs.nh = {
       enable = true;
 
       # Clean old builds

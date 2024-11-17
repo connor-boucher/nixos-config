@@ -19,6 +19,7 @@
           "$mod, B, exec, ${config.home.sessionVariables.BROWSER}"
           "$mod, RETURN, exec, ${config.home.sessionVariables.TERMINAL}"
           "$mod, f, exec, ${config.home.sessionVariables.TERMINAL} -e ${pkgs.lf}/bin/lf"
+          "$mod, r, exec, ${pkgs.fuzzel}/bin/fuzzel -I"
 
           "$mod, h, movefocus, l"
           "$mod, j, movefocus, d"

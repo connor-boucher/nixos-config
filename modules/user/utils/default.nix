@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./fuzzel
     ./lf
     ./nh
     ./ranger
@@ -11,6 +12,7 @@
   options.utils.enable = lib.mkEnableOption "enable utils";
 
   config = lib.mkIf config.utils.enable {
+    fuzzel.enable = lib.mkDefault true;
     lf.enable = lib.mkDefault true;
     nh.enable = lib.mkDefault true;
     ranger.enable = lib.mkDefault false;

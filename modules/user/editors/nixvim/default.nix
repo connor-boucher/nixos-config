@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, ... }:
 
 {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
@@ -14,7 +14,6 @@
       vimAlias = true;
       vimdiffAlias = true;
 
-      # Custom options
       opts = {
         # Disable temporary files
         backup = false;

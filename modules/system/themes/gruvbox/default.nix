@@ -11,7 +11,8 @@
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
       image = ./wallpaper.jpg;
 
-      # Set transparency for terminals
+      # Set transparency for applications
+      opacity.desktop = 0.95;
       opacity.terminal = 0.95;
 
       # Set custom cursor

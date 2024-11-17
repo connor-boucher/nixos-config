@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -8,6 +8,7 @@
     ../../modules/user/music
     ../../modules/user/shells
     ../../modules/user/terminals
+    ../../modules/user/utils
     ../../modules/user/window-managers
   ];
 
@@ -23,6 +24,7 @@
   music.enable = true;
   shells.enable = true;
   terminals.enable = true;
+  utils.enable = true;
   window-managers.enable = true;
 
   # TODO modularize

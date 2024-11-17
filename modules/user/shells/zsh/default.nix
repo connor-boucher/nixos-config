@@ -9,8 +9,8 @@
 
       # Set custom prompt
       initExtra = ''
-      autoload -U colors && colors
-      PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+        autoload -U colors && colors
+        PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
       '';
 
       # Enable vi mode
@@ -26,6 +26,7 @@
       # Fish-style abbreviations
       zsh-abbr.enable = true;
       zsh-abbr.abbreviations = {
+        g = "git";
       };
     };
   };

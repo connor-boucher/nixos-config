@@ -2,14 +2,16 @@
 
 {
   imports = [
+    ./librewolf
     ./qutebrowser
   ];
 
   options.browsers.enable = lib.mkEnableOption "enable browsers";
 
   config = lib.mkIf config.browsers.enable {
-    home.sessionVariables.BROWSER = lib.mkDefault "brave";
+    home.sessionVariables.BROWSER = lib.mkDefault "librewolf";
 
-    qutebrowser.enable = lib.mkDefault true;
+    librewolf.enable = lib.mkDefault true;
+    qutebrowser.enable = lib.mkDefault false;
   };
 }

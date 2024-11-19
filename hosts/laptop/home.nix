@@ -28,7 +28,7 @@
   window-managers.enable = true;
 
   # TODO modularize
-  home.packages = with pkgs; [ brave discord nitch pulsemixer protonvpn-gui zed-editor ];
+  home.packages = with pkgs; [ discord nitch pulsemixer protonvpn-gui zed-editor ];
 
   home.stateVersion = "23.11";
 }

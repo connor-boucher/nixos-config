@@ -15,9 +15,9 @@
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
 
-    # nixvim
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nvf
+    nvf.url = "github:notashelf/nvf";
+    nvf.inputs.nixpkgs.follows = "nixpkgs";
 
     # spicetify-nix
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -27,7 +27,7 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, nix-ld, nixvim, spicetify-nix, stylix, ... }: {
+  outputs = inputs @ { nixpkgs, home-manager, nix-ld, nvf, spicetify-nix, stylix, ... }: {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -35,7 +35,7 @@
           ./hosts/laptop
           home-manager.nixosModules.default
           nix-ld.nixosModules.nix-ld
-          nixvim.nixosModules.nixvim
+          nvf.nixosModules.nvf
           spicetify-nix.nixosModules.default
           stylix.nixosModules.stylix
         ];

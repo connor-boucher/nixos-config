@@ -3,7 +3,7 @@
 {
   imports = [
     ./emacs
-    ./nixvim
+    ./nvf
   ];
 
   options.editors.enable = lib.mkEnableOption "enable editors";
@@ -12,6 +12,6 @@
     home.sessionVariables.EDITOR = lib.mkDefault "nvim";
 
     emacs.enable = lib.mkDefault true;
-    nixvim.enable = lib.mkDefault true;
+    nvf.enable = lib.mkDefault true;
   };
 }

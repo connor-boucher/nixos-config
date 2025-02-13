@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/user/browsers
+    ../../modules/user/communication
     ../../modules/user/dev
     ../../modules/user/editors
     ../../modules/user/music
@@ -19,6 +20,7 @@
 
   # User software modules
   browsers.enable = true;
+  communication.enable = true;
   dev.enable = true;
   editors.enable = true;
   music.enable = true;
@@ -28,7 +30,7 @@
   window-managers.enable = true;
 
   # TODO modularize
-  home.packages = with pkgs; [ discord nitch pulsemixer protonvpn-gui zed-editor ];
+  home.packages = with pkgs; [ nitch pulsemixer protonvpn-gui zed-editor ];
 
   home.stateVersion = "23.11";
 }

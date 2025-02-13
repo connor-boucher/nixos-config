@@ -19,8 +19,9 @@
         };
         map = {
           normal = {
-            "Super Return" = "spawn ${config.home.sessionVariables.TERMINAL}";
-            "Super b" = "spawn ${config.home.sessionVariables.BROWSER}";
+            "Super Return" = "spawn '${config.home.sessionVariables.TERMINAL}'";
+            "Super b" = "spawn '${config.home.sessionVariables.BROWSER}'";
+            "Super d" = "spawn 'discord'";
             "Super f" = "spawn '${config.home.sessionVariables.TERMINAL} -e ${pkgs.lf}/bin/lf'";
             "Super m" = "spawn '${config.home.sessionVariables.TERMINAL} -e ${pkgs.pulsemixer}/bin/pulsemixer'";
             "Super s" = "spawn 'spotify'";

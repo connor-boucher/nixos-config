@@ -45,5 +45,12 @@
         };
       };
     };
+
+    home.packages = [
+      (pkgs.writeShellScriptBin "librewolf" ''
+        export HOME="~/.local/user"
+        exec "${config.programs.firefox.package}/bin/librewolf" "$@"
+      '')
+    ];
   };
 }

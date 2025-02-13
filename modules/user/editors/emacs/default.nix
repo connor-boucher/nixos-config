@@ -10,7 +10,7 @@
 
     # Copy dotfiles to ~/.config
     home.file.".config/emacs" = {
-      source = ../../../../config/emacs;
+      source = ./config;
       recursive = true;
     };
   };

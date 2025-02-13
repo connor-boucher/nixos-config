@@ -7,6 +7,9 @@
     programs.zsh = {
       enable = true;
 
+      # Move config files out of ~
+      dotDir = ".config/zsh";
+
       # Set custom prompt
       initExtra = ''
         autoload -U colors && colors

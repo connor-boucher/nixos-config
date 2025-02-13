@@ -5,6 +5,7 @@
     ../../modules/system/themes
   ];
 
+  programs.nix-ld.dev.enable = true;
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -28,17 +29,19 @@
     displayManager.gdm.enable = true;
     xkb.layout = "us";
     xkb.options = "caps:swapescape";
+    autoRepeatDelay = 300;
+    autoRepeatInterval = 50;
   };
+  console.useXkbConfig = true;
 
   services.libinput.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  programs.sway.enable = true;
-  programs.hyprland.enable = true;
+  programs.river.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -62,7 +65,7 @@
     users.connor = import ./home.nix;
   };
 
-  fonts.packages = [ pkgs.nerdfonts pkgs.jetbrains-mono ];
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono pkgs.jetbrains-mono ];
 
   system.stateVersion = "24.05";
 }

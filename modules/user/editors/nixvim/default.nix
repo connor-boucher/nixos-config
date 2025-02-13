@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
@@ -33,8 +33,74 @@
       };
 
       # Install plugins
-      plugins.nix.enable = true;
-      plugins.transparent.enable = true;
+      plugins = {
+        bufferline.enable = true;
+        bufferline.settings = {
+          options = {
+            separator_style = "thin";
+          };
+        };
+        cmp-emoji.enable = true;
+        cmp = {
+          enable = true;
+          settings = {
+            autoEnableSources = true;
+            experimental = {
+              ghost_text = true;
+            };
+            sources = [
+              { name = "nvim_lsp"; }
+              { name = "emoji"; }
+              { name = "paths"; keywordLength = 3; }
+            ];
+            formatting = {
+              fields = [
+                "kind"
+                "abbr"
+                "menu"
+              ];
+            };
+            window = {
+              completion = {
+                border = "solid";
+              };
+              documentation = {
+                border = "solid";
+              };
+            };
+          };
+        };
+        cmp-nvim-lsp.enable = true;
+        cmp-path.enable = true;
+        lualine.enable = true;
+        lsp = {
+          enable = true;
+          inlayHints = true;
+          servers = {
+            nixd = {
+              enable = true;
+              autostart = true;
+            };
+          };
+        };
+
+        lsp-format.enable = true;
+        nix.enable = true;
+        telescope.enable = true;
+        transparent.enable = true;
+
+        treesitter = {
+          enable = false;
+          settings = {
+            auto_install = false;
+            highlight.enable = true;
+            indent.enable = true;
+          };
+          nixvimInjections = true;
+          grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
+        };
+        web-devicons.enable = true;
+      };
     };
   };
 }

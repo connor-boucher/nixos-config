@@ -6,6 +6,7 @@
     ./lf
     ./nh
     ./ranger
+    ./tmux
     ./waybar
   ];
 
@@ -16,6 +17,7 @@
     lf.enable = lib.mkDefault true;
     nh.enable = lib.mkDefault true;
     ranger.enable = lib.mkDefault false;
+    tmux.enable = lib.mkDefault true;
     waybar.enable = lib.mkDefault true;
   };
 }

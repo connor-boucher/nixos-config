@@ -9,11 +9,12 @@
 
       # Enable gruvbox colourscheme
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+
+      # Set wallpaper
       image = ./wallpaper.jpg;
       polarity = "dark";
 
       # Set transparency for applications
-      opacity.desktop = 0.95;
       opacity.terminal = 0.95;
 
       # Set custom cursor
@@ -23,26 +24,9 @@
       };
 
       # Set custom fonts
-      fonts = {
-        serif = {
-          package = pkgs.dejavu_fonts;
-          name = "DejaVu Serif";
-        };
-
-        sansSerif = {
-          package = pkgs.dejavu_fonts;
-          name = "DejaVu Sans";
-        };
-
-        monospace = {
-          package = pkgs.jetbrains-mono;
-          name = "JetBrains Mono";
-        };
-
-        emoji = {
-          package = pkgs.noto-fonts-emoji;
-          name = "Noto Color Emoji";
-        };
+      fonts.monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
     };
   };

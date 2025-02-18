@@ -8,15 +8,25 @@
   config = lib.mkIf config.spicetify.enable {
     nixpkgs.config.allowUnfree = true;
 
-    programs.spicetify = {
-      enable = true;
+    # Disable stylix default styling
+    stylix.targets.spicetify.enable = false;
 
-      # Custom spicetify plugins
-      enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.system}.extensions; [
-        adblock
-        hidePodcasts
-        shuffle
-      ];
-    };
+    programs.spicetify =
+      let
+        spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+      in
+      {
+        enable = true;
+
+        # Custom spicetify plugins
+        enabledExtensions = with spicePkgs.extensions; [
+          adblock
+          hidePodcasts
+          shuffle
+        ];
+
+        theme = spicePkgs.themes.text;
+        colorScheme = "gruvbox";
+      };
   };
 }

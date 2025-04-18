@@ -13,9 +13,11 @@
     ../../modules/user/window-managers
   ];
 
-  # Configure user
-  home.username = my.user.username;
-  home.homeDirectory = my.user.home;
+  # Configure user settings
+  home = {
+    username = my.user.username;
+    homeDirectory = my.user.home;
+  };
 
   # Enable home manager
   programs.home-manager.enable = true;

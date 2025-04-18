@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ my, pkgs, ... }:
 
 {
   imports = [
@@ -13,9 +13,11 @@
     ../../modules/user/window-managers
   ];
 
-  home.username = "connor";
-  home.homeDirectory = "/home/connor";
+  # Configure user
+  home.username = my.user.username;
+  home.homeDirectory = my.user.home;
 
+  # Enable home manager
   programs.home-manager.enable = true;
 
   # User software modules

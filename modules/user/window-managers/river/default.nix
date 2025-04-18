@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 {
   options.river.enable = lib.mkEnableOption "enables river";
@@ -17,14 +17,18 @@
           timeout = 10000;
           when-typing = true;
         };
+        set-repeat = "50 300";
         map = {
           normal = {
             "Super Return" = "spawn '${config.home.sessionVariables.TERMINAL}'";
-            "Super b" = "spawn '${config.home.sessionVariables.BROWSER}'";
-            "Super d" = "spawn 'discord'";
-            "Super f" = "spawn '${config.home.sessionVariables.TERMINAL} -e ${pkgs.lf}/bin/lf'";
-            "Super m" = "spawn '${config.home.sessionVariables.TERMINAL} -e ${pkgs.pulsemixer}/bin/pulsemixer'";
-            "Super s" = "spawn 'spotify'";
+            "Super B" = "spawn '${config.home.sessionVariables.BROWSER}'";
+            "Super D" = "spawn 'discord'";
+            "Super F" = "spawn '${config.home.sessionVariables.TERMINAL} -e lf'";
+            "Super M" = "spawn '${config.home.sessionVariables.TERMINAL} -e pulsemixer'";
+            "Super N" = "spawn '${config.home.sessionVariables.TERMINAL} -e nmtui'";
+            "Super S" = "spawn 'spotify'";
+
+            "Super+Shift F" = "toggle-float";
 
             "Super J" = "focus-view next";
             "Super K" = "focus-view previous";
@@ -40,6 +44,12 @@
             "Super+Shift Q" = "exit";
           };
         };
+        map-pointer = {
+          normal = {
+            "Super BTN_LEFT" = "move-view";
+            "Super BTN_RIGHT" = "resize-view";
+          };
+        };
         rule-add = {
           "ssd" = "";
         };
@@ -53,6 +63,7 @@
         done
 
         rivertile -view-padding 6 -outer-padding 6 -main-ratio 0.5 &
+        waybar &
       '';
     };
   };

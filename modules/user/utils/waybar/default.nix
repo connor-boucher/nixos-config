@@ -29,11 +29,13 @@
             "memory"
             "temperature"
             "hyprland/window"
+            "river/window"
           ];
 
           # Bar middle
           modules-center = [
             "hyprland/workspaces"
+            "river/tags"
           ];
 
           # Bar right side
@@ -78,6 +80,12 @@
           };
 
           "hyprland/window" = {
+            format = "<b>{}</b>";
+            separate-outputs = true;
+            max-length = 35;
+          };
+
+          "river/window" = {
             format = "<b>{}</b>";
             separate-outputs = true;
             max-length = 35;

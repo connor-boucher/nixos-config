@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, my, pkgs, ... }:
 
 {
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
@@ -25,8 +25,8 @@
           shuffle
         ];
 
-        theme = spicePkgs.themes.text;
-        colorScheme = "gruvbox";
+        theme = my.theme.spicetify.theme;
+        colorScheme = my.theme.spicetify.colorScheme;
       };
   };
 }

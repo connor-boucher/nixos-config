@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, my, ... }:
 
 {
   options.git.enable = lib.mkEnableOption "enables git";
@@ -7,8 +7,8 @@
     programs.git = {
       enable = true;
 
-      userName = "connor-boucher";
-      userEmail = "60579609+connor-boucher@users.noreply.github.com";
+      userName = my.user.git.username;
+      userEmail = my.user.git.email;
     };
   };
 }

@@ -7,6 +7,7 @@
     ../../modules/user/dev
     ../../modules/user/editors
     ../../modules/user/music
+    ../../modules/user/networking
     ../../modules/user/shells
     ../../modules/user/terminals
     ../../modules/user/utils
@@ -28,13 +29,11 @@
   dev.enable = true;
   editors.enable = true;
   music.enable = true;
+  networking.enable = true;
   shells.enable = true;
   terminals.enable = true;
   utils.enable = true;
   window-managers.enable = true;
-
-  # TODO modularize
-  home.packages = with pkgs; [ nitch pulsemixer protonvpn-gui zed-editor ];
 
   home.stateVersion = "23.11";
 }

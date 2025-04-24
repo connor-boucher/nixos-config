@@ -2,14 +2,6 @@
 
 let
   my = {
-    host = {
-      name = "laptop";
-      locale = {
-        time = "Europe/London";
-        locale = "en_GB.UTF-8";
-      };
-    };
-
     user = {
       name = "Connor";
       username = "connor";
@@ -19,6 +11,14 @@ let
       git = {
         username = "connor-boucher";
         email = "60579609+connor-boucher@users.noreply.github.com";
+      };
+    };
+
+    host = {
+      name = "laptop";
+      locale = {
+        time = "Europe/London";
+        locale = "en_GB.UTF-8";
       };
     };
 
@@ -36,14 +36,14 @@ let
 in
 {
   options.my = {
-    host = lib.mkOption {
-      type = with lib.types; attrs;
-      description = "Shared global host settings.";
-    };
-
     user = lib.mkOption {
       type = with lib.types; attrs;
       description = "Shared global user settings.";
+    };
+
+    host = lib.mkOption {
+      type = with lib.types; attrs;
+      description = "Shared global host settings.";
     };
 
     theme = lib.mkOption {

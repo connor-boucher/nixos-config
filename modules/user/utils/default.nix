@@ -5,6 +5,7 @@
     ./fuzzel
     ./lf
     ./nh
+    ./nsxiv
     ./ranger
     ./tmux
     ./waybar
@@ -16,6 +17,7 @@
     fuzzel.enable = lib.mkDefault true;
     lf.enable = lib.mkDefault true;
     nh.enable = lib.mkDefault true;
+    nsxiv.enable = lib.mkDefault true;
     ranger.enable = lib.mkDefault false;
     tmux.enable = lib.mkDefault true;
     waybar.enable = lib.mkDefault true;

@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.lf.enable = lib.mkEnableOption "enables lf";
+  options.utils.lf.enable = lib.mkEnableOption "enables lf";
 
-  config = lib.mkIf config.lf.enable {
+  config = lib.mkIf config.utils.lf.enable {
     # Custom file icons
     xdg.configFile."lf/icons".source = ./icons;
 

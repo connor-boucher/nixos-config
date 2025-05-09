@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.ranger.enable = lib.mkEnableOption "enables ranger";
+  options.utils.ranger.enable = lib.mkEnableOption "enables ranger";
 
-  config = lib.mkIf config.ranger.enable {
+  config = lib.mkIf config.utils.ranger.enable {
     programs.ranger = {
       enable = true;
 

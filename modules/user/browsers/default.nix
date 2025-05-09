@@ -11,7 +11,9 @@
   config = lib.mkIf config.browsers.enable {
     home.sessionVariables.BROWSER = lib.mkDefault "librewolf";
 
-    librewolf.enable = lib.mkDefault true;
-    qutebrowser.enable = lib.mkDefault false;
+    browsers = {
+      librewolf.enable = lib.mkDefault true;
+      qutebrowser.enable = lib.mkDefault false;
+    };
   };
 }

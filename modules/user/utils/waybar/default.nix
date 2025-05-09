@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.waybar.enable = lib.mkEnableOption "enables waybar";
+  options.utils.waybar.enable = lib.mkEnableOption "enables waybar";
 
-  config = lib.mkIf config.waybar.enable {
+  config = lib.mkIf config.utils.waybar.enable {
     stylix.targets.waybar.enable = false;
 
     programs.waybar = {

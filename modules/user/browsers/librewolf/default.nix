@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.librewolf.enable = lib.mkEnableOption "enables librewolf";
+  options.browsers.librewolf.enable = lib.mkEnableOption "enables librewolf";
 
-  config = lib.mkIf config.librewolf.enable {
+  config = lib.mkIf config.browsers.librewolf.enable {
     programs.firefox = {
       enable = true;
       package = pkgs.librewolf;

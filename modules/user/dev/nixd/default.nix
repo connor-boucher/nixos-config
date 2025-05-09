@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.nixd.enable = lib.mkEnableOption "enables nixd";
+  options.dev.nixd.enable = lib.mkEnableOption "enables nixd";
 
-  config = lib.mkIf config.nixd.enable {
+  config = lib.mkIf config.dev.nixd.enable {
     home.packages = [ pkgs.nixd ];
   };
 }

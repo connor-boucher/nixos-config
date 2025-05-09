@@ -3,9 +3,9 @@
 {
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
-  options.spicetify.enable = lib.mkEnableOption "enables spicetify";
+  options.music.spicetify.enable = lib.mkEnableOption "enables spicetify";
 
-  config = lib.mkIf config.spicetify.enable {
+  config = lib.mkIf config.music.spicetify.enable {
     nixpkgs.config.allowUnfree = true;
 
     # Disable stylix default styling

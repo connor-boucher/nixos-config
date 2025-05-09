@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.nitch.enable = lib.mkEnableOption "enables nitch";
+  options.utils.nitch.enable = lib.mkEnableOption "enables nitch";
 
-  config = lib.mkIf config.nitch.enable {
+  config = lib.mkIf config.utils.nitch.enable {
     home.packages = [ pkgs.nitch ];
   };
 }

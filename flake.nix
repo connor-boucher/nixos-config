@@ -28,29 +28,24 @@
   };
 
   outputs = inputs @ { nixpkgs, home-manager, nix-ld, nvf, spicetify-nix, stylix, ... }: {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/desktop
+    nixosConfigurations =
+      let
+        commonModules = [
           home-manager.nixosModules.default
           nix-ld.nixosModules.nix-ld
           nvf.nixosModules.nvf
           spicetify-nix.nixosModules.default
           stylix.nixosModules.stylix
         ];
+
+        mkHost = name: configPath: nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ configPath ] ++ commonModules;
+        };
+      in
+      {
+        desktop = mkHost "desktop" ./hosts/desktop/configuration.nix;
+        laptop = mkHost "laptop" ./hosts/laptop/configuration.nix;
       };
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/laptop
-          home-manager.nixosModules.default
-          nix-ld.nixosModules.nix-ld
-          nvf.nixosModules.nvf
-          spicetify-nix.nixosModules.default
-          stylix.nixosModules.stylix
-        ];
-      };
-    };
   };
 }

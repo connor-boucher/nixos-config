@@ -1,9 +1,12 @@
-{ config, lib, ... }:
+{ config, lib, my, pkgs, ... }:
 
 {
-  options.gtk.enable = lib.mkEnableOption "enables gtk";
+  options.appearance.gtk.enable = lib.mkEnableOption "enables gtk";
 
-  config = lib.mkIf config.gtk.enable {
-    gtk.enable = true;
+  config = lib.mkIf config.appearance.gtk.enable {
+    gtk = {
+      enable = true;
+      iconTheme = my.theme.icons;
+    };
   };
 }

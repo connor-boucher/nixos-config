@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.river.enable = lib.mkEnableOption "enables river";
+  options.window-managers.river.enable = lib.mkEnableOption "enables river";
 
-  config = lib.mkIf config.river.enable {
+  config = lib.mkIf config.window-managers.river.enable {
     # Important for making wallpapers work as stylix depends on hyprpaper
     services.hyprpaper.enable = true;
 
@@ -24,6 +24,7 @@
             "Super B" = "spawn '${config.home.sessionVariables.BROWSER}'";
             "Super D" = "spawn 'discord'";
             "Super F" = "spawn '${config.home.sessionVariables.TERMINAL} -e lf'";
+            "Super G" = "spawn 'steam'";
             "Super M" = "spawn '${config.home.sessionVariables.TERMINAL} -e pulsemixer'";
             "Super N" = "spawn '${config.home.sessionVariables.TERMINAL} -e nmtui'";
             "Super S" = "spawn 'spotify'";

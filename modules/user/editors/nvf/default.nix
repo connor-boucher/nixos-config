@@ -3,9 +3,9 @@
 {
   imports = [ inputs.nvf.homeManagerModules.nvf ];
 
-  options.nvf.enable = lib.mkEnableOption "enables nvf";
+  options.editors.nvf.enable = lib.mkEnableOption "enables nvf";
 
-  config = lib.mkIf config.nvf.enable {
+  config = lib.mkIf config.editors.nvf.enable {
     programs.nvf = {
       enable = true;
 

@@ -1,9 +1,9 @@
 { config, lib, my, ... }:
 
 {
-  options.zed.enable = lib.mkEnableOption "enables zed";
+  options.editors.zed.enable = lib.mkEnableOption "enables zed";
 
-  config = lib.mkIf config.zed.enable {
+  config = lib.mkIf config.editors.zed.enable {
     programs.zed-editor = {
       enable = true;
       extensions = [ my.theme.zed.theme.pkg ];

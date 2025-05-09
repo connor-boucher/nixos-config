@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.nh.enable = lib.mkEnableOption "enables nh";
+  options.utils.nh.enable = lib.mkEnableOption "enables nh";
 
-  config = lib.mkIf config.nh.enable {
+  config = lib.mkIf config.utils.nh.enable {
     programs.nh = {
       enable = true;
 

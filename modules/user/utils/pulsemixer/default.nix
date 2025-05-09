@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.pulsemixer.enable = lib.mkEnableOption "enables pulsemixer";
+  options.utils.pulsemixer.enable = lib.mkEnableOption "enables pulsemixer";
 
-  config = lib.mkIf config.pulsemixer.enable {
+  config = lib.mkIf config.utils.pulsemixer.enable {
     home.packages = [ pkgs.pulsemixer ];
   };
 }

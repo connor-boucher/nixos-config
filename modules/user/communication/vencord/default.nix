@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.vencord.enable = lib.mkEnableOption "enables vencord";
+  options.communication.vencord.enable = lib.mkEnableOption "enables vencord";
 
-  config = lib.mkIf config.vencord.enable {
+  config = lib.mkIf config.communication.vencord.enable {
     home.packages = [
       (pkgs.discord.override {
         withOpenASAR = true;

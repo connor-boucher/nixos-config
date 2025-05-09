@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.protonvpn.enable = lib.mkEnableOption "enables protonvpn";
+  options.networking.protonvpn.enable = lib.mkEnableOption "enables protonvpn";
 
-  config = lib.mkIf config.protonvpn.enable {
+  config = lib.mkIf config.networking.protonvpn.enable {
     home.packages = with pkgs; [
       protonvpn-cli
       protonvpn-gui

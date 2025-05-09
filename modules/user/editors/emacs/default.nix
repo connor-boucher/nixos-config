@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.emacs.enable = lib.mkEnableOption "enables emacs";
+  options.editors.emacs.enable = lib.mkEnableOption "enables emacs";
 
-  config = lib.mkIf config.emacs.enable {
+  config = lib.mkIf config.editors.emacs.enable {
     programs.emacs = {
       enable = true;
     };

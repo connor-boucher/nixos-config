@@ -10,6 +10,8 @@
   config = lib.mkIf config.terminals.enable {
     home.sessionVariables.TERMINAL = lib.mkDefault "foot";
 
-    foot.enable = lib.mkDefault true;
+    terminals = {
+      foot.enable = lib.mkDefault true;
+    };
   };
 }

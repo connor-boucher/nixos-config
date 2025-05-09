@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.tmux.enable = lib.mkEnableOption "enables tmux";
+  options.utils.tmux.enable = lib.mkEnableOption "enables tmux";
 
-  config = lib.mkIf config.tmux.enable {
+  config = lib.mkIf config.utils.tmux.enable {
     stylix.targets.tmux.enable = false;
 
     programs.tmux = {

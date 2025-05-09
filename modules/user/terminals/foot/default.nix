@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.foot.enable = lib.mkEnableOption "enables foot";
+  options.terminals.foot.enable = lib.mkEnableOption "enables foot";
 
-  config = lib.mkIf config.foot.enable {
+  config = lib.mkIf config.terminals.foot.enable {
     programs.foot = {
       enable = true;
 

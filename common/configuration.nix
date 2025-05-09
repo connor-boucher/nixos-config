@@ -9,6 +9,7 @@
     ../modules/system/desktop-manager
     ../modules/system/display
     ../modules/system/fonts
+    ../modules/system/graphics
     ../modules/system/input
     ../modules/system/locale
     ../modules/system/networking

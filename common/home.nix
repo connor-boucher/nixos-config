@@ -1,7 +1,8 @@
-{ my, pkgs, ... }:
+{ my, ... }:
 
 {
   imports = [
+    ../modules/user/appearance
     ../modules/user/browsers
     ../modules/user/communication
     ../modules/user/dev
@@ -24,6 +25,7 @@
   programs.home-manager.enable = true;
 
   # User software modules
+  appearance.enable = true;
   browsers.enable = true;
   communication.enable = true;
   dev.enable = true;
@@ -34,23 +36,6 @@
   terminals.enable = true;
   utils.enable = true;
   window-managers.enable = true;
-
-  gtk.enable = true;
-  gtk.iconTheme.package = pkgs.papirus-icon-theme;
-  gtk.iconTheme.name = "Papirus Dark";
-  dconf.settings = {
-    "org/mate/destkop/background" = {
-      picture-filename = "" + my.theme.wallpaper;
-    };
-    "org/mate/desktop/interface" = {
-      gtk-theme = "adw-gtk3";
-    };
-    "org/mate/power-manager" = {
-      backlight-battery-reduce = false;
-      kbd-backlight-battery-reduce = false;
-      idle-dim-battery = false;
-    };
-  };
 
   home.stateVersion = "23.11";
 }

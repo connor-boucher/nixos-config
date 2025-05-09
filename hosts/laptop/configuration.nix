@@ -6,6 +6,7 @@
     ../../modules/system/audio
     ../../modules/system/boot
     ../../modules/system/connectivity
+    ../../modules/system/desktop-manager
     ../../modules/system/display
     ../../modules/system/fonts
     ../../modules/system/input

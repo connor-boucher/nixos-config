@@ -29,6 +29,17 @@
 
   outputs = inputs @ { nixpkgs, home-manager, nix-ld, nvf, spicetify-nix, stylix, ... }: {
     nixosConfigurations = {
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/desktop
+          home-manager.nixosModules.default
+          nix-ld.nixosModules.nix-ld
+          nvf.nixosModules.nvf
+          spicetify-nix.nixosModules.default
+          stylix.nixosModules.stylix
+        ];
+      };
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [

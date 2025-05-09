@@ -2,16 +2,16 @@
 
 {
   imports = [
-    ../../modules/user/browsers
-    ../../modules/user/communication
-    ../../modules/user/dev
-    ../../modules/user/editors
-    ../../modules/user/music
-    ../../modules/user/networking
-    ../../modules/user/shells
-    ../../modules/user/terminals
-    ../../modules/user/utils
-    ../../modules/user/window-managers
+    ../modules/user/browsers
+    ../modules/user/communication
+    ../modules/user/dev
+    ../modules/user/editors
+    ../modules/user/music
+    ../modules/user/networking
+    ../modules/user/shells
+    ../modules/user/terminals
+    ../modules/user/utils
+    ../modules/user/window-managers
   ];
 
   # Configure user settings

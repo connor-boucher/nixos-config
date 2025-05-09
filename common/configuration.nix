@@ -1,20 +1,20 @@
-{ config, inputs, ... }:
+{ config, home, inputs, myConfig, ... }:
 
 {
   imports = [
-    ./my.config.nix
-    ../../modules/system/audio
-    ../../modules/system/boot
-    ../../modules/system/connectivity
-    ../../modules/system/desktop-manager
-    ../../modules/system/display
-    ../../modules/system/fonts
-    ../../modules/system/input
-    ../../modules/system/locale
-    ../../modules/system/networking
-    ../../modules/system/security
-    ../../modules/system/themes
-    ../../modules/system/user
+    myConfig
+    ../modules/system/audio
+    ../modules/system/boot
+    ../modules/system/connectivity
+    ../modules/system/desktop-manager
+    ../modules/system/display
+    ../modules/system/fonts
+    ../modules/system/input
+    ../modules/system/locale
+    ../modules/system/networking
+    ../modules/system/security
+    ../modules/system/themes
+    ../modules/system/user
   ];
 
   # Enable home manager
@@ -23,7 +23,7 @@
       inherit inputs;
       my = config.my;
     };
-    users.${config.my.user.username} = import ./home.nix;
+    users.${config.my.user.username} = import home;
   };
 
   # Enable flakes and non-free packages

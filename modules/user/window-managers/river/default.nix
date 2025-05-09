@@ -20,7 +20,7 @@
         set-repeat = "50 300";
         map = {
           normal = {
-            "Super Return" = "spawn '${config.home.sessionVariables.TERMINAL} -e tmux'";
+            "Super Return" = "spawn '${config.home.sessionVariables.TERMINAL}'";
             "Super B" = "spawn '${config.home.sessionVariables.BROWSER}'";
             "Super D" = "spawn 'discord'";
             "Super F" = "spawn '${config.home.sessionVariables.TERMINAL} -e lf'";

@@ -17,7 +17,6 @@
 
           theme = {
             enable = true;
-            name = "gruvbox";
             style = "dark";
             transparent = true;
           };
@@ -31,15 +30,15 @@
 
           statusline.lualine = {
             enable = true;
-            theme = "gruvbox_dark";
           };
           tabline.nvimBufferline.enable = true;
 
           telescope.enable = true;
           autocomplete.nvim-cmp.enable = true;
 
+          lsp.enable = true;
+
           languages = {
-            enableLSP = true;
             enableTreesitter = true;
 
             nix.enable = true;

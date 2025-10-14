@@ -1,17 +1,19 @@
-{ config, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
-  options.browsers.librewolf.enable = lib.mkEnableOption "enables librewolf";
+  imports = [ inputs.textfox.homeManagerModules.default ];
 
-  config = lib.mkIf config.browsers.librewolf.enable {
+  options.browsers.firefox.enable = lib.mkEnableOption "enables firefox";
+
+  config = lib.mkIf config.browsers.firefox.enable {
     programs.firefox = {
       enable = true;
-      package = pkgs.librewolf;
       policies = {
         AutofillAddressEnabled = false;
         AutofillCreditCardEnabled = false;
         DisableAccounts = true;
         DisableFormHistory = true;
+        DisableTelemetry = true;
         ExtensionSettings = {
           # Bangs for Google
           "{0b6e9329-ab40-4973-b139-f10425bef6f5}" = {
@@ -46,10 +48,19 @@
       };
     };
 
+    textfox = {
+      enable = true;
+      profile = "default";
+      config = {
+        displayNavButtons = true;
+        newtabLogo = "";
+      };
+    };
+
     home.packages = [
-      (pkgs.writeShellScriptBin "librewolf" ''
+      (pkgs.writeShellScriptBin "firefox" ''
         export HOME="~/.local/user"
-        exec "${config.programs.firefox.package}/bin/librewolf" "$@"
+        exec "${config.programs.firefox.package}/bin/firefox" "$@"
       '')
     ];
   };

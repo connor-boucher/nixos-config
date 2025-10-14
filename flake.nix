@@ -15,6 +15,9 @@
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
 
+    # nixcord
+    nixcord.url = "github:kaylorben/nixcord";
+
     # nvf
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
@@ -25,12 +28,16 @@
 
     # stylix
     stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # textfox
+    textfox.url = "github:adriankarlen/textfox";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, nix-ld, nvf, spicetify-nix, stylix, ... }: {
+  outputs = inputs: {
     nixosConfigurations =
       let
-        commonModules = [
+        commonModules = with inputs; [
           home-manager.nixosModules.default
           nix-ld.nixosModules.nix-ld
           nvf.nixosModules.nvf
@@ -38,7 +45,7 @@
           stylix.nixosModules.stylix
         ];
 
-        mkHost = name: configPath: nixpkgs.lib.nixosSystem {
+        mkHost = name: configPath: inputs.nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ configPath ] ++ commonModules;
         };

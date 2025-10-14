@@ -35,8 +35,9 @@
   programs.nix-ld.dev.enable = true;
 
   # Enable necessary programs
-  programs.river.enable = true;
+  programs.river-classic.enable = true;
   programs.zsh.enable = true;
+  services.xserver.desktopManager.cinnamon.enable = true;
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
 }

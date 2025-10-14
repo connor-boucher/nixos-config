@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  config.services.printing.enable = true;
+  config = {
+    hardware.bluetooth.enable = true;
+    services.printing.enable = true;
+  };
 }

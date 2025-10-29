@@ -11,6 +11,10 @@
     # hyprland
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # niri
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";
+
     # nix-ld
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,9 +22,22 @@
     # nixcord
     nixcord.url = "github:kaylorben/nixcord";
 
+    # noctalia
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";
+    };
+
     # nvf
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
+
+    # quickshell
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # spicetify-nix
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

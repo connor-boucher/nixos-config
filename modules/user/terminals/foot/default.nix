@@ -9,7 +9,7 @@
 
       settings = {
         # Cosmetic padding
-        main.pad = "30x30";
+        main.pad = "15x15";
       };
     };
   };

@@ -12,8 +12,8 @@
     polarity = config.my.theme.polarity;
 
     # Set transparency for applications
-    opacity.applications = 0.95;
-    opacity.terminal = 0.95;
+    opacity.applications = 0.9;
+    opacity.terminal = 0.9;
 
     # Set custom cursor
     cursor = {

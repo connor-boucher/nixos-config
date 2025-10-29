@@ -6,6 +6,8 @@
   options.browsers.firefox.enable = lib.mkEnableOption "enables firefox";
 
   config = lib.mkIf config.browsers.firefox.enable {
+    stylix.targets.firefox.profileNames = [ "default" ];
+
     programs.firefox = {
       enable = true;
       policies = {

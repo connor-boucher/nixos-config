@@ -3,6 +3,7 @@
 {
   imports = [
     ./hyprland
+    ./niri
     ./river
     ./sway
   ];
@@ -12,6 +13,7 @@
   config = lib.mkIf config.window-managers.enable {
     window-managers = {
       hyprland.enable = lib.mkDefault false;
+      niri.enable = lib.mkDefault true;
       river.enable = lib.mkDefault true;
       sway.enable = lib.mkDefault false;
     };

@@ -9,7 +9,7 @@
     };
 
     # Copy dotfiles to ~/.config
-    home.file.".config/emacs" = {
+    home.file."${config.xdg.configHome}/emacs" = {
       source = ./config;
       recursive = true;
     };

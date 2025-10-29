@@ -139,7 +139,7 @@
         window-rules = [
           {
             matches = [
-              { app-id = "dev.zed.Zed"; }
+              { app-id = "discord"; }
               { app-id = "Emacs"; }
               { app-id = "spotify"; }
             ];
@@ -205,6 +205,7 @@
           };
         };
         colorSchemes.predefinedScheme = my.theme.noctalia-shell.theme;
+        ui.fontDefault = "JetBrainsMono Nerd Font";
       };
     };
   };

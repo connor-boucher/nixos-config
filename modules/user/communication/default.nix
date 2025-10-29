@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.communication.enable {
     communication = {
-      nixcord.enable = lib.mkDefault false;
+      nixcord.enable = lib.mkDefault true;
     };
   };
 }

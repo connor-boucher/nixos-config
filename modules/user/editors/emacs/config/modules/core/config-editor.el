@@ -5,8 +5,14 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Respect exact pixel sizes
+(setq frame-resize-pixelwise t)
+
 ;; Use y or n prompts
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Disable GUI popups
+(setq use-dialog-box nil)
 
 ;; Disable bell sound
 (setq ring-bell-function 'ignore)
@@ -25,12 +31,18 @@
 (setq create-lockfiles nil)
 
 ;; Disable backup files
+(setq backup-inhibited t)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
 ;; Define custom registers
 (set-register ?e (cons 'file "~/nixos-config/modules/user/editors/emacs/config"))
+(set-register ?m (cons 'file "~/nixos-config/modules/"))
 (set-register ?n (cons 'file "~/nixos-config"))
+
+;; Startup screens
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message "")
 
 
 ;; Expose the module to the rest of the config

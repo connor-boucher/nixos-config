@@ -8,7 +8,7 @@
       enable = true;
 
       # Utilise the hyprland flake
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+      package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
 
       settings = {
         # Set modifier key to Mod4

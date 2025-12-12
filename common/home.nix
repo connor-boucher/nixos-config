@@ -12,6 +12,7 @@
     ../modules/user/shells
     ../modules/user/terminals
     ../modules/user/utils
+    ../modules/user/video
     ../modules/user/window-managers
   ];
 
@@ -35,6 +36,7 @@
   shells.enable = true;
   terminals.enable = true;
   utils.enable = true;
+  video.enable = true;
   window-managers.enable = true;
 
   home.stateVersion = "23.11";

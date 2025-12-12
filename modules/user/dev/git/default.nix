@@ -7,8 +7,10 @@
     programs.git = {
       enable = true;
 
-      userName = my.user.git.username;
-      userEmail = my.user.git.email;
+      settings.user = {
+        name = my.user.git.username;
+        email = my.user.git.email;
+      };
     };
   };
 }

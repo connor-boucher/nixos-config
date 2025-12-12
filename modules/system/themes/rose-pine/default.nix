@@ -16,7 +16,7 @@
     theme = "Rosepine";
   };
   spicetify = {
-    theme = inputs.spicetify-nix.legacyPackages.${pkgs.system}.themes.text;
+    theme = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system}.themes.text;
     colorScheme = "RosePine";
   };
   zed = {

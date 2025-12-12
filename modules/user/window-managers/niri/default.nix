@@ -47,7 +47,7 @@
             { proportion = 1.0; }
           ];
 
-          default-column-width.proportion = 0.5;
+          default-column-width.proportion = 2.0 / 3.0;
         };
 
         gestures.hot-corners.enable = false;
@@ -66,18 +66,27 @@
             "Super+B".action = spawn "${config.home.sessionVariables.BROWSER}";
             "Super+C".action = spawn "qalculate-gtk";
             "Super+D".action = spawn "discord";
+            "Super+E".action = spawn "emacs";
             "Super+F".action = spawn "thunar";
             "Super+G".action = spawn "steam'";
             "Super+M".action = spawn "${config.home.sessionVariables.TERMINAL} -e pulsemixer";
             "Super+N".action = spawn "${config.home.sessionVariables.TERMINAL} -e nmtui";
             "Super+S".action = spawn "spotify";
             "Super+R".action.spawn = [
-              "noctalia-shell" "ipc" "call" "launcher" "toggle"
+              "noctalia-shell"
+              "ipc"
+              "call"
+              "launcher"
+              "toggle"
             ];
 
             "Super+Shift+C".action = close-window;
             "Super+Shift+P".action.spawn = [
-              "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+              "noctalia-shell"
+              "ipc"
+              "call"
+              "sessionMenu"
+              "toggle"
             ];
 
             "Super+1".action = focus-workspace 1;
@@ -115,17 +124,21 @@
             "Super+Shift+Period".action = switch-preset-window-height;
             "Super+Shift+Tab".action = toggle-column-tabbed-display;
 
-            "Print".action = screenshot;
+            "Print".action.screenshot-screen = { show-pointer = false; };
             "Super+Shift+E".action = quit;
             "XF86PowerOff".action.spawn = [
-              "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+              "noctalia-shell"
+              "ipc"
+              "call"
+              "sessionMenu"
+              "toggle"
             ];
 
             "XF86AudioPlay".action = sh "playerctl play-pause";
             "XF86AudioStop".action = sh "playerctl stop";
             "XF86AudioPrev".action = sh "playerctl previous";
             "XF86AudioNext".action = sh "playerctl next";
-            
+
             "XF86AudioRaiseVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
             "XF86AudioLowerVolume".action = sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
 
@@ -150,7 +163,7 @@
     };
 
     home.packages = with pkgs; [
-      inputs.noctalia.packages.${system}.default
+      inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
     ];
 
     programs.noctalia-shell = {
@@ -205,7 +218,7 @@
           };
         };
         colorSchemes.predefinedScheme = my.theme.noctalia-shell.theme;
-        ui.fontDefault = "JetBrainsMono Nerd Font";
+        ui.fontDefault = lib.mkForce "JetBrainsMono Nerd Font";
       };
     };
   };

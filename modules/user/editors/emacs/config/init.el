@@ -5,13 +5,32 @@
 
 (add-to-list 'load-path config-modules-dir)
 
+;; Core
+(add-to-list 'load-path (expand-file-name "core" config-modules-dir))
 (require 'config-packages)
 (require 'config-editor)
 (require 'config-evil)
-(require 'config-modeline)
-(require 'config-which-key)
-(require 'config-languages)
-(require 'config-lsp)
 (require 'config-term)
+(require 'config-which-key)
+
+;; UI
+(add-to-list 'load-path (expand-file-name "ui" config-modules-dir))
 (require 'config-font)
 (require 'config-icons)
+(require 'config-dashboard)
+(require 'config-modeline)
+(require 'config-tabs)
+
+;; LSP
+(add-to-list 'load-path (expand-file-name "lsp" config-modules-dir))
+(require 'config-lsp)
+
+;; Languages
+(add-to-list 'load-path (expand-file-name "languages" config-modules-dir))
+(require 'config-languages)
+
+;; Completions
+(add-to-list 'load-path (expand-file-name "completions" config-modules-dir))
+(require 'config-consult)
+(require 'config-marginalia)
+(require 'config-vertico)

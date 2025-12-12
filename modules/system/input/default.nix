@@ -4,7 +4,11 @@
   config = {
     console.useXkbConfig = true;
     services = {
-      libinput.enable = true;
+      libinput = {
+        enable = true;
+        mouse.accelProfile = "flat";
+      };
+
       xserver = {
         autoRepeatDelay = 300;
         autoRepeatInterval = 50;

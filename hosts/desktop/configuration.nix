@@ -14,6 +14,12 @@ in
     ../../modules/system/graphics/nvidia
   ];
 
+  # Set correct GRUB resolution
+  boot.loader.grub = {
+    gfxmodeEfi = "2560x1440";
+    gfxpayloadEfi = "2560x1440";
+  };
+
   # Install steam for gaming
   programs = {
     gamemode.enable = true;

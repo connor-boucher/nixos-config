@@ -20,6 +20,7 @@
 (require 'config-dashboard)
 (require 'config-modeline)
 (require 'config-tabs)
+(require 'config-treemacs)
 
 ;; LSP
 (add-to-list 'load-path (expand-file-name "lsp" config-modules-dir))

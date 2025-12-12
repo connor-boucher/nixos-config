@@ -173,6 +173,7 @@
         bar = {
           density = "comfortable";
           opacity = 0.75;
+          outerCorners = false;
           widgets = {
             left = [
               {

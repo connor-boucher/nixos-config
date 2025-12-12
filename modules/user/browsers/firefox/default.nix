@@ -8,6 +8,7 @@
   options.browsers.firefox.enable = lib.mkEnableOption "enables firefox";
 
   config = lib.mkIf config.browsers.firefox.enable {
+    stylix.targets.firefox.colorTheme.enable = true;
     stylix.targets.firefox.profileNames = [ "default" ];
 
     programs.firefox = {
@@ -22,29 +23,32 @@
         OfferToSaveLoginsDefault = false;
         PasswordManagerEnabled = false;
       };
-      profiles.default.extensions.packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
-        ctrl-number-to-switch-tabs
-        lesspass
-        proton-vpn
-        tridactyl
-        ublock-origin
-      ];
-    };
-
-    textfox = {
-      enable = true;
-      profile = "default";
-      config = {
-        displayNavButtons = true;
-        newtabLogo = "";
+      profiles.default.extensions = {
+        packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+          ctrl-number-to-switch-tabs
+          lesspass
+          proton-vpn
+          tridactyl
+          ublock-origin
+        ];
+        force = true;
       };
     };
 
-    home.packages = [
-      (pkgs.writeShellScriptBin "firefox" ''
-        export HOME="~/.local/user"
-        exec "${config.programs.firefox.package}/bin/firefox" "$@"
-      '')
-    ];
-  };
-}
+      textfox = {
+        enable = true;
+        profile = "default";
+        config = {
+          displayNavButtons = true;
+          newtabLogo = "";
+        };
+      };
+
+      home.packages = [
+        (pkgs.writeShellScriptBin "firefox" ''
+          export HOME="~/.local/user"
+          exec "${config.programs.firefox.package}/bin/firefox" "$@"
+        '')
+      ];
+    };
+  }

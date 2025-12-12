@@ -11,6 +11,9 @@
 ;; Use y or n prompts
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Disable confirmation when closing with running processes
+(setq confirm-kill-processes nil)
+
 ;; Disable GUI popups
 (setq use-dialog-box nil)
 
@@ -39,6 +42,7 @@
 (set-register ?e (cons 'file "~/nixos-config/modules/user/editors/emacs/config"))
 (set-register ?m (cons 'file "~/nixos-config/modules/"))
 (set-register ?n (cons 'file "~/nixos-config"))
+(set-register ?s (cons 'file "~/sauce"))
 
 ;; Startup screens
 (setq inhibit-startup-screen t)

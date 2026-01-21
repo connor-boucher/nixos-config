@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, inputs, pkgs, ... }:
 
 let
   myConfig = ./my.config.nix;
@@ -7,7 +7,7 @@ in
 {
   imports = [
     (import ../../common/configuration.nix {
-      inherit config home inputs myConfig;
+      inherit config home inputs myConfig pkgs;
     })
     ./hardware-configuration.nix
   ];

@@ -1,4 +1,4 @@
-{ config, home, inputs, myConfig, ... }:
+{ config, home, inputs, myConfig, pkgs, ... }:
 
 {
   imports = [
@@ -38,6 +38,12 @@
   programs.niri.enable = true;
   programs.river-classic.enable = true;
   programs.zsh.enable = true;
+
+  # Enables the emacs daemon
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs-pgtk;
+  };
 
   system.stateVersion = "25.05";
 }

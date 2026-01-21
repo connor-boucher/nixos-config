@@ -10,7 +10,7 @@
     package = pkgs.rose-pine-icon-theme;
   };
   nixcord = {
-    theme = "https://github.com/refact0r/system24/blob/main/theme/flavors/system24-rose-pine.theme.css";
+    theme = "https://github.com/refact0r/system24/raw/refs/heads/main/theme/flavors/system24-rose-pine.theme.css";
   };
   noctalia-shell = {
     theme = "Rosepine";

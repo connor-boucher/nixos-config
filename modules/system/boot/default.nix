@@ -1,13 +1,19 @@
-{ ... }:
+{ inputs, pkgs, ... }:
 
 {
-  config.boot.loader = {
-    grub = {
-      enable = true;
-      device = "nodev";
-      efiSupport = true;
-      useOSProber = true;
+  config = {
+    stylix.targets.grub.enable = false;
+
+    boot.loader = {
+      grub = {
+        enable = true;
+        default = "saved";
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+        theme = inputs.nixos-grub-themes.packages.${pkgs.stdenv.hostPlatform.system}.nixos;
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
   };
 }

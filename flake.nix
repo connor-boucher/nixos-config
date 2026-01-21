@@ -34,6 +34,9 @@
     # nixcord
     nixcord.url = "github:kaylorben/nixcord";
 
+    # nixos-grub-themes
+    nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
+
     # noctalia
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";

@@ -3,8 +3,9 @@
 ;; Install EAT
 (use-package eat
   :init
-  (setq eat-term-maximum-scrollback 10000)
+  (eat-eshell-mode)
 
+  :config
   (global-set-key (kbd "C-c t") #'eat)
   (global-set-key (kbd "C-c T") #'eat-other-window))
 

@@ -10,6 +10,7 @@
 (require 'config-packages)
 (require 'config-editor)
 (require 'config-evil)
+(require 'config-flycheck)
 (require 'config-term)
 (require 'config-which-key)
 
@@ -18,6 +19,7 @@
 (require 'config-font)
 (require 'config-icons)
 (require 'config-dashboard)
+(require 'config-dirvish)
 (require 'config-modeline)
 (require 'config-tabs)
 (require 'config-treemacs)

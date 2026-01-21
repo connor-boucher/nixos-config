@@ -62,16 +62,16 @@
             sh = spawn "sh" "-c";
           in
           {
-            "Super+Return".action = spawn "${config.home.sessionVariables.TERMINAL}";
-            "Super+B".action = spawn "${config.home.sessionVariables.BROWSER}";
-            "Super+C".action = spawn "qalculate-gtk";
-            "Super+D".action = spawn "discord";
-            "Super+E".action = spawn "emacs";
-            "Super+F".action = spawn "thunar";
-            "Super+G".action = spawn "steam'";
-            "Super+M".action = spawn "${config.home.sessionVariables.TERMINAL} -e pulsemixer";
-            "Super+N".action = spawn "${config.home.sessionVariables.TERMINAL} -e nmtui";
-            "Super+S".action = spawn "spotify";
+            "Super+Return".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" ];
+            "Super+B".action.spawn = [ "${config.home.sessionVariables.BROWSER}" ];
+            "Super+C".action.spawn = [ "qalculate-gtk" ];
+            "Super+D".action.spawn = [ "discord" ];
+            "Super+E".action.spawn = [ "emacs" ];
+            "Super+F".action.spawn = [ "thunar" ];
+            "Super+G".action.spawn = [ "steam" ];
+            "Super+M".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" "-e" "pulsemixer" ];
+            "Super+N".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" "-e" "nmtui" ];
+            "Super+S".action.spawn = [ "spotify" ];
             "Super+R".action.spawn = [
               "noctalia-shell"
               "ipc"
@@ -218,7 +218,6 @@
             ];
           };
         };
-        colorSchemes.predefinedScheme = my.theme.noctalia-shell.theme;
         ui.fontDefault = lib.mkForce "JetBrainsMono Nerd Font";
       };
     };

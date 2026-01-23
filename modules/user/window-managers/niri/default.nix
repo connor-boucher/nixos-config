@@ -192,7 +192,6 @@
             right = [
               {
                 id = "Tray";
-                enableDrawer = false;
               }
               {
                 id = "NotificationHistory";

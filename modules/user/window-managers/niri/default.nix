@@ -170,28 +170,25 @@
       enable = true;
 
       settings = {
+        general.telemetryEnabled = false;
         bar = {
+          position = "left";
           density = "comfortable";
-          opacity = 0.75;
+          backgroundOpacity = lib.mkForce 0.5;
+          capsuleOpacity = lib.mkForce 0.65;
           outerCorners = false;
           widgets = {
             left = [
               {
-                id = "Clock";
+                id = "ControlCenter";
+                useDistroLogo = true;
               }
-              {
-                id = "ActiveWindow";
-              }
-              {
-                id = "MediaMini";
-              }
-            ];
-            center = [
               {
                 id = "Workspace";
                 labelMode = "none";
               }
             ];
+            center = [];
             right = [
               {
                 id = "Tray";
@@ -200,25 +197,26 @@
                 id = "NotificationHistory";
               }
               {
-                id = "WiFi";
-              }
-              {
-                id = "Bluetooth";
-              }
-              {
                 id = "Volume";
               }
               {
-                id = "SystemMonitor";
+                id = "Battery";
               }
               {
-                id = "ControlCenter";
-                useDistroLogo = true;
+                id = "VPN";
+              }
+              {
+                id = "Clock";
+              }
+              {
+                id = "SessionManager";
+                fillColor = "Primary";
               }
             ];
           };
         };
         ui.fontDefault = lib.mkForce "JetBrainsMono Nerd Font";
+        dock.enable = false;
       };
     };
   };

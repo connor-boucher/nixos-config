@@ -7,9 +7,10 @@
     ./nh
     ./nitch
     ./nsxiv
+    ./peazip
     ./pulsemixer
+    ./pv
     ./ranger
-    ./thunar
     ./tmux
     ./waybar
   ];
@@ -18,14 +19,15 @@
 
   config = lib.mkIf config.utils.enable {
     utils = {
-      fuzzel.enable = lib.mkDefault false;
+      fuzzel.enable = lib.mkDefault true;
       lf.enable = lib.mkDefault true;
       nh.enable = lib.mkDefault true;
       nitch.enable = lib.mkDefault true;
       nsxiv.enable = lib.mkDefault true;
+      peazip.enable = lib.mkDefault true;
       pulsemixer.enable = lib.mkDefault true;
+      pv.enable = lib.mkDefault true;
       ranger.enable = lib.mkDefault false;
-      thunar.enable = lib.mkDefault true;
       tmux.enable = lib.mkDefault true;
       waybar.enable = lib.mkDefault true;
     };

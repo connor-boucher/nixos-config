@@ -14,6 +14,7 @@
     ../modules/system/locale
     ../modules/system/networking
     ../modules/system/security
+    ../modules/system/storage
     ../modules/system/themes
     ../modules/system/user
   ];
@@ -43,6 +44,15 @@
   services.emacs = {
     enable = true;
     package = pkgs.emacs-pgtk;
+  };
+
+  # Enable thunar with plugins
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
   };
 
   system.stateVersion = "25.05";

@@ -56,7 +56,6 @@
             ctrl-number-to-switch-tabs
             lesspass
             new-tab-override
-            proton-vpn
             ublock-origin
             vimium 
           ];

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./dolphin
     ./fuzzel
     ./lf
     ./nh
@@ -19,6 +20,7 @@
 
   config = lib.mkIf config.utils.enable {
     utils = {
+      dolphin.enable = lib.mkDefault true;
       fuzzel.enable = lib.mkDefault true;
       lf.enable = lib.mkDefault true;
       nh.enable = lib.mkDefault true;

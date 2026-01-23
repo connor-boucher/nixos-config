@@ -18,7 +18,7 @@
   };
   zed = {
     theme = {
-      pkg = "tokyo-night-theme";
+      pkg = "tokyo-night-themes";
       light = "Tokyo Night Light";
       dark = "Tokyo Night";
     };

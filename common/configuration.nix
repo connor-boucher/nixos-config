@@ -13,6 +13,7 @@
     ../modules/system/input
     ../modules/system/locale
     ../modules/system/networking
+    ../modules/system/power
     ../modules/system/security
     ../modules/system/storage
     ../modules/system/themes
@@ -32,6 +33,14 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable gc and optimization
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Run unpatched dynamic binaries on NixOS
   programs.nix-ld.dev.enable = true;
 
@@ -44,15 +53,6 @@
   services.emacs = {
     enable = true;
     package = pkgs.emacs-pgtk;
-  };
-
-  # Enable thunar with plugins
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
   };
 
   system.stateVersion = "25.05";

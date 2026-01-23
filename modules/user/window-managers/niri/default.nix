@@ -67,7 +67,7 @@
             "Super+C".action.spawn = [ "qalculate-gtk" ];
             "Super+D".action.spawn = [ "discord" ];
             "Super+E".action.spawn = [ "emacs" ];
-            "Super+F".action.spawn = [ "thunar" ];
+            "Super+F".action.spawn = [ "dolphin" ];
             "Super+G".action.spawn = [ "steam" ];
             "Super+M".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" "-e" "pulsemixer" ];
             "Super+N".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" "-e" "nmtui" ];
@@ -99,6 +99,16 @@
             "Super+8".action = focus-workspace 8;
             "Super+9".action = focus-workspace 9;
             "Super+0".action = focus-workspace 10;
+            "Super+Shift+1".action.move-column-to-workspace = 1;
+            "Super+Shift+2".action.move-column-to-workspace = 2;
+            "Super+Shift+3".action.move-column-to-workspace = 3;
+            "Super+Shift+4".action.move-column-to-workspace = 4;
+            "Super+Shift+5".action.move-column-to-workspace = 5;
+            "Super+Shift+6".action.move-column-to-workspace = 6;
+            "Super+Shift+7".action.move-column-to-workspace = 7;
+            "Super+Shift+8".action.move-column-to-workspace = 8;
+            "Super+Shift+9".action.move-column-to-workspace = 9;
+            "Super+Shift+0".action.move-column-to-workspace = 10;
 
             "Super+H".action = focus-column-left;
             "Super+J".action = focus-window-down;
@@ -124,7 +134,8 @@
             "Super+Shift+Period".action = switch-preset-window-height;
             "Super+Shift+Tab".action = toggle-column-tabbed-display;
 
-            "Print".action.screenshot-screen = { show-pointer = false; };
+            "Print".action.screenshot = { show-pointer = false; };
+            "Shift+Print".action.screenshot-screen = { show-pointer = false; };
             "Super+Shift+E".action = quit;
             "XF86PowerOff".action.spawn = [
               "noctalia-shell"

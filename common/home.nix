@@ -39,5 +39,19 @@
   video.enable = true;
   window-managers.enable = true;
 
+  # Change user directory names
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    desktop = "$HOME/desktop";
+    download = "$HOME/downloads";
+    documents = "$HOME/documents";
+    music = "$HOME/music";
+    pictures = "$HOME/pictures";
+    videos = "$HOME/videos";
+    templates = null;
+    publicShare = null;
+  };
+
   home.stateVersion = "23.11";
 }

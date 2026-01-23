@@ -22,7 +22,7 @@ let
       };
     };
 
-    theme = import ../../modules/system/themes/rose-pine { inherit inputs pkgs; };
+    theme = import ../../modules/system/themes/tokyo-night { inherit inputs pkgs; };
   };
 in
 {

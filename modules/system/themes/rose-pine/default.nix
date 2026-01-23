@@ -12,9 +12,6 @@
   nixcord = {
     theme = "https://github.com/refact0r/system24/raw/refs/heads/main/theme/flavors/system24-rose-pine.theme.css";
   };
-  noctalia-shell = {
-    theme = "Rosepine";
-  };
   spicetify = {
     theme = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system}.themes.text;
     colorScheme = "RosePine";

@@ -192,6 +192,7 @@
             right = [
               {
                 id = "Tray";
+                enableDrawer = false;
               }
               {
                 id = "NotificationHistory";
@@ -209,14 +210,14 @@
                 id = "Clock";
               }
               {
-                id = "SessionManager";
+                id = "SessionMenu";
                 fillColor = "Primary";
               }
             ];
           };
         };
         ui.fontDefault = lib.mkForce "JetBrainsMono Nerd Font";
-        dock.enable = false;
+        dock.enabled = false;
       };
     };
   };

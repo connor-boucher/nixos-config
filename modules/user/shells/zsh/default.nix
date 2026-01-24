@@ -29,6 +29,8 @@
       # Fish-style abbreviations
       zsh-abbr.enable = true;
       zsh-abbr.abbreviations = {
+        top = "btop";
+        ls = "eza";
         g = "git";
       };
     };

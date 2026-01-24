@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./mpv
     ./stremio
   ];
 
@@ -9,6 +10,7 @@
 
   config = lib.mkIf config.video.enable {
     video = {
+      mpv.enable = true;
       stremio.enable = lib.mkDefault false;
     };
   };

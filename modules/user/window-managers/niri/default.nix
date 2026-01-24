@@ -19,6 +19,9 @@
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
 
+        # Doesn't support environment variables so must be hardcoded
+        screenshot-path = "~/pictures/screenshots/%Y-%m-%d %H-%M-%S.png";
+
         layout = {
           border.enable = false;
           focus-ring = with config.lib.stylix.colors.withHashtag; {

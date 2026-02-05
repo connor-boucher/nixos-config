@@ -57,7 +57,7 @@
             lesspass
             new-tab-override
             ublock-origin
-            vimium 
+            vimium
           ];
           force = true;
         };

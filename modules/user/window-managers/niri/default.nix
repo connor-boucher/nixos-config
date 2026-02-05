@@ -1,4 +1,4 @@
-{ config, inputs, lib, my, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   imports = [
@@ -202,7 +202,7 @@
                 labelMode = "none";
               }
             ];
-            center = [];
+            center = [ ];
             right = [
               {
                 id = "Tray";

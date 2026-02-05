@@ -7,6 +7,7 @@
     ./eza
     ./fuzzel
     ./fzf
+    ./git
     ./lf
     ./nh
     ./nitch
@@ -18,6 +19,7 @@
     ./tmux
     ./waybar
     ./zathura
+    ./zip
   ];
 
   options.utils.enable = lib.mkEnableOption "enable utils";
@@ -29,6 +31,7 @@
       eza.enable = lib.mkDefault true;
       fuzzel.enable = lib.mkDefault false;
       fzf.enable = lib.mkDefault true;
+      git.enable = lib.mkDefault true;
       lf.enable = lib.mkDefault true;
       nh.enable = lib.mkDefault true;
       nitch.enable = lib.mkDefault true;
@@ -40,6 +43,7 @@
       tmux.enable = lib.mkDefault true;
       waybar.enable = lib.mkDefault true;
       zathura.enable = lib.mkDefault true;
+      zip.enable = lib.mkDefault true;
     };
   };
 }

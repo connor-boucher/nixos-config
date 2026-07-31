@@ -4,6 +4,6 @@
   options.networking.protonvpn.enable = lib.mkEnableOption "enables protonvpn";
 
   config = lib.mkIf config.networking.protonvpn.enable {
-    home.packages = with pkgs; [ protonvpn-gui ];
+    home.packages = with pkgs; [ proton-vpn ];
   };
 }

@@ -4,7 +4,7 @@
   config = {
     stylix.targets.grub.enable = false;
 
-    boot.kernelPackages = pkgs.linuxPackages_hardened;
+    # boot.kernelPackages = pkgs.linuxPackages_hardened;
     boot.loader = {
       grub = {
         enable = true;

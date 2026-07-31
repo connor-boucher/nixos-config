@@ -66,7 +66,7 @@
 
     textfox = {
       enable = true;
-      profile = "default";
+      profiles = [ "default" ];
       config = {
         displayNavButtons = true;
         newtabLogo = "";

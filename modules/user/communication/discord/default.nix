@@ -3,9 +3,9 @@
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
-  options.communication.nixcord.enable = lib.mkEnableOption "enables nixcord";
+  options.communication.discord.enable = lib.mkEnableOption "enables discord";
 
-  config = lib.mkIf config.communication.nixcord.enable {
+  config = lib.mkIf config.communication.discord.enable {
     programs.nixcord = {
       enable = true;
       config = {

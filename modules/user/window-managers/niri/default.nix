@@ -22,6 +22,13 @@
         # Doesn't support environment variables so must be hardcoded
         screenshot-path = "~/pictures/screenshots/%Y-%m-%d %H-%M-%S.png";
 
+        workspaces = {
+          "01" = { name = "dev"; };
+          "02" = { name = "web"; };
+          "03" = { name = "chat"; };
+          "04" = { name = "music"; };
+        };
+
         layout = {
           border.enable = false;
           focus-ring = with config.lib.stylix.colors.withHashtag; {
@@ -63,17 +70,19 @@
           with config.lib.niri.actions;
           let
             sh = spawn "sh" "-c";
+            term = c: [ "${config.home.sessionVariables.TERMINAL}" "-e" c ];
           in
           {
             "Super+Return".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" ];
+            "Super+A".action.spawn = term "pulsemixer";
             "Super+B".action.spawn = [ "${config.home.sessionVariables.BROWSER}" ];
             "Super+C".action.spawn = [ "qalculate-gtk" ];
             "Super+D".action.spawn = [ "discord" ];
             "Super+E".action.spawn = [ "emacs" ];
             "Super+F".action.spawn = [ "dolphin" ];
             "Super+G".action.spawn = [ "steam" ];
-            "Super+M".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" "-e" "pulsemixer" ];
-            "Super+N".action.spawn = [ "${config.home.sessionVariables.TERMINAL}" "-e" "nmtui" ];
+            "Super+N".action.spawn = term "nmtui";
+            "Super+M".action.spawn = [ "tutanota-desktop" ];
             "Super+S".action.spawn = [ "spotify" ];
             "Super+R".action.spawn = [
               "noctalia-shell"
@@ -187,9 +196,9 @@
         general.telemetryEnabled = false;
         bar = {
           position = "left";
-          density = "comfortable";
           backgroundOpacity = lib.mkForce 0.5;
           capsuleOpacity = lib.mkForce 0.65;
+          useSeparateOpacity = true;
           outerCorners = false;
           widgets = {
             left = [
@@ -200,6 +209,7 @@
               {
                 id = "Workspace";
                 labelMode = "none";
+                pillSize = 0.45;
               }
             ];
             center = [ ];
@@ -215,6 +225,7 @@
               }
               {
                 id = "Battery";
+                displayMode = "Icon - Show on hover";
               }
               {
                 id = "VPN";
@@ -229,8 +240,16 @@
             ];
           };
         };
-        ui.fontDefault = lib.mkForce "JetBrainsMono Nerd Font";
+        ui = {
+          fontDefault = lib.mkForce "JetBrainsMono Nerd Font";
+          panelsAttachedToBar = false;
+          settingsPanelMode = "centered";
+        };
         dock.enabled = false;
+        sessionMenu = {
+          enableCountdown = false;
+          largeButtonsStyle = false;
+        };
       };
     };
   };

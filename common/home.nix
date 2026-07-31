@@ -4,6 +4,7 @@
   imports = [
     ../modules/user/appearance
     ../modules/user/browsers
+    ../modules/user/common
     ../modules/user/communication
     ../modules/user/dev
     ../modules/user/editors
@@ -28,6 +29,7 @@
   # User software modules
   appearance.enable = true;
   browsers.enable = true;
+  common.enable = true;
   communication.enable = true;
   dev.enable = true;
   editors.enable = true;
@@ -38,20 +40,6 @@
   utils.enable = true;
   video.enable = true;
   window-managers.enable = true;
-
-  # Change user directory names
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    desktop = "$HOME/desktop";
-    download = "$HOME/downloads";
-    documents = "$HOME/documents";
-    music = "$HOME/music";
-    pictures = "$HOME/pictures";
-    videos = "$HOME/videos";
-    templates = null;
-    publicShare = null;
-  };
 
   home.stateVersion = "23.11";
 }

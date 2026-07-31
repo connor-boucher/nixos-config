@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  config.security.polkit.enable = true;
+  config.security = {
+    apparmor.enable = true;
+    polkit.enable = true;
+  };
 }

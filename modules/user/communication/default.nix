@@ -2,14 +2,16 @@
 
 {
   imports = [
-    ./nixcord
+    ./discord
+    ./tutanota
   ];
 
   options.communication.enable = lib.mkEnableOption "enable communication";
 
   config = lib.mkIf config.communication.enable {
     communication = {
-      nixcord.enable = lib.mkDefault true;
+      discord.enable = lib.mkDefault true;
+      tutanota.enable = lib.mkDefault true;
     };
   };
 }
